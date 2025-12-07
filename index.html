@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>12-Lead ECG Simulator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./ecg-grid.css">
+
+</head>
+<body>
+
+<div class="container">
+    <h1>12-Lead ECG Simulator</h1>
+
+    <!-- Controls -->
+    <div class="controls">
+
+        <div>
+            <label>P Wave</label><br>
+            <select id="P">
+                <option value="">Normal</option>
+                <option value="p_mitrale">P mitrale</option>
+                <option value="p_pulmonale">P pulmonale</option>
+                <option value="afib">Atrial fibrillation</option>
+                <option value="flutter">Atrial flutter</option>
+            </select>
+        </div>
+
+        <div>
+            <label>PR Interval</label><br>
+            <select id="PR">
+                <option value="">Normal</option>
+                <option value="first_degree">1° block</option>
+                <option value="wenckebach">Mobitz I</option>
+                <option value="mobitz2">Mobitz II</option>
+                <option value="chb">CHB</option>
+            </select>
+        </div>
+
+        <div>
+            <label>QRS</label><br>
+            <select id="QRS">
+                <option value="">Normal</option>
+                <option value="rbbb">RBBB</option>
+                <option value="lbbb">LBBB</option>
+                <option value="delta">WPW (Delta)</option>
+                <option value="wide_vt">Wide QRS (VT)</option>
+            </select>
+        </div>
+
+        <div>
+            <label>ST Segment</label><br>
+            <select id="ST">
+                <option value="">Normal</option>
+                <option value="st_elev">ST Elevation</option>
+                <option value="st_depr">ST Depression</option>
+                <option value="scooped">Scooped</option>
+                <option value="brugada">Brugada</option>
+            </select>
+        </div>
+
+        <div>
+            <label>T Wave</label><br>
+            <select id="T">
+                <option value="">Normal</option>
+                <option value="tall">Tall T</option>
+                <option value="flat">Flat T</option>
+                <option value="inverted">Inverted T</option>
+            </select>
+        </div>
+
+        <button id="toggleMove">Start / Stop</button>
+
+    </div>
+
+    <!-- ECG Grid will render canvases inside -->
+    <div class="lead-grid" id="lead-grid"></div>
+
+</div>
+
+
+<!-- JAVASCRIPT FILES (ALL IN SAME FOLDER) -->
+<script type="module" src="./config.js"></script>
+<script type="module" src="./patterns.js"></script>
+
+<!-- wave models -->
+<script type="module" src="./p-wave.js"></script>
+<script type="module" src="./pr-interval.js"></script>
+<script type="module" src="./qrs-complex.js"></script>
+<script type="module" src="./st-segment.js"></script>
+<script type="module" src="./t-wave.js"></script>
+<script type="module" src="./full-wave.js"></script>
+
+<!-- lead logic -->
+<script type="module" src="./lead-scale.js"></script>
+<script type="module" src="./lead-modifiers.js"></script>
+<script type="module" src="./lead-list.js"></script>
+
+<!-- engine -->
+<script type="module" src="./grid.js"></script>
+<script type="module" src="./render.js"></script>
+<script type="module" src="./loop.js"></script>
+
+<!-- UI -->
+<script type="module" src="./layout.js"></script>
+<script type="module" src="./controls.js"></script>
+<script type="module" src="./events.js"></script>
+
+<!-- main -->
+<script type="module" src="./main.js"></script>
+
+</body>
+</html>

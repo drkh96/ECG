@@ -1,0 +1,11 @@
+/* ECG PAPER GRID (OPTIONAL SEPARATE FILE) */
+
+.ecg-grid-small {
+    stroke: rgba(255,0,0,0.08);
+    stroke-width: 0.5;
+}
+
+.ecg-grid-large {
+    stroke: rgba(255,0,0,0.20);
+    stroke-width: 1;
+}
